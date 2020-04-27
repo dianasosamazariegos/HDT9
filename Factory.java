@@ -5,10 +5,25 @@
  */
 package hdt9;
 
-/**
- *
- * @author diana
- */
-public class Factory {
+import java.util.*;
+
+public class Factory<K,V> {
     
+    public Factory(){
+    }
+    
+    public Map<K,V> getMap(int tipo){
+    // seleccioin de la implementacion a usar
+        if (tipo == 1){
+            return new HashMap<K,V>();//regresa un HashMap
+        }
+        else if (tipo == 2){
+            return new TreeMap<K,V>(); //regresa un TreeMap
+        }
+        else{
+            return new LinkedHashMap<K,V>();//regresa un LinkedHashMap
+        }
+    }
 }
+    
+
